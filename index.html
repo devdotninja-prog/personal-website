@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Thinking...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Cursor glow - follows mouse, LLM "thinking" vibe -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-glow-inner" id="cursor-glow-inner" aria-hidden="true"></div>
+  <div class="llm-container">
+    <!-- Thinking indicator (global) -->
+    <div class="thinking-bar" id="thinking-bar">
+      <span class="thinking-dots">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="thinking-label">Thinking...</span>
+    </div>
+
+    <!-- Chat-style content -->
+    <main class="chat-main">
+      <!-- User prompt -->
+      <div class="message message-user">
+        <div class="message-avatar">You</div>
+        <div class="message-content">
+          <p>Tell me about yourself — who you are, your skills, projects, and how to get in touch.</p>
+        </div>
+      </div>
+
+      <!-- AI Response - Hero -->
+      <div class="message message-ai" id="hero">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="hero-thinking">
+            <span class="thinking-dots inline">
+              <span></span><span></span><span></span>
+            </span>
+          </div>
+          <div class="response-content stream-in" id="hero-content">
+            <p class="response-greeting">Hello! I'm <strong class="hero-name">Loading...</strong></p>
+            <p class="hero-tagline">Loading...</p>
+            <div class="response-cta">
+              <a href="#about" class="btn btn-primary">Learn more about me</a>
+              <a href="#contact" class="btn btn-outline">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Response - About -->
+      <div class="message message-ai" id="about">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="about-thinking">
+            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+          </div>
+          <div class="response-content stream-in" id="about-content">
+            <h3 class="section-title">About Me</h3>
+            <div class="about-inner">
+              <div class="about-image"><div class="image-placeholder"></div></div>
+              <div class="about-text">
+                <p class="about-bio">Loading...</p>
+                <div class="skills-list" id="skills-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Response - Projects -->
+      <div class="message message-ai" id="projects">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="projects-thinking">
+            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+          </div>
+          <div class="response-content stream-in" id="projects-content">
+            <h3 class="section-title">Selected Work</h3>
+            <div class="projects-grid" id="projects-grid"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Response - Experience -->
+      <div class="message message-ai" id="experience">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="experience-thinking">
+            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+          </div>
+          <div class="response-content stream-in" id="experience-content">
+            <h3 class="section-title">Experience</h3>
+            <div class="timeline" id="timeline"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Response - Contact -->
+      <div class="message message-ai" id="contact">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="contact-thinking">
+            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+          </div>
+          <div class="response-content stream-in" id="contact-content">
+            <h3 class="section-title">Let's Connect</h3>
+            <p class="contact-text">Loading...</p>
+            <div class="contact-links" id="contact-links"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer / Status -->
+  <footer class="llm-footer">
+    <span class="footer-status">Ready</span>
+    <span id="footer-name">Portfolio</span>
+    <span id="year"></span>
+  </footer>
+
+  <!-- Nav (minimal) -->
+  <nav class="llm-nav">
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="articles.html">Articles</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

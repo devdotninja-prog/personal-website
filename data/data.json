@@ -1,0 +1,168 @@
+{
+  "profile": {
+    "name": "Achmad Gozali",
+    "tagline": "Software Engineer & Gym Enthusiast",
+    "bio": "Software engineer who builds what matters. Gym enthusiast. I use Flask and Express.js, and I'm comfortable with Linux, HTML & CSS, JavaScript, and Git. Simple, focused, always shipping.",
+    "contactText": "I'd love to hear from you. Whether it's a project, collaboration, or just a hello \u2014 reach out.",
+    "avatar": "assets/avatar.png",
+    "email": "devdotninja@gmail.com",
+    "location": "Bulukumba, Indonesia",
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/devdotninja-prog",
+        "icon": "\u2197"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/achmadgozali",
+        "icon": "\u2197"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/devdotninja",
+        "icon": "\u2197"
+      }
+    ]
+  },
+  "skills": [
+    { "name": "Python", "reps": 90 },
+    { "name": "Flask", "reps": 88 },
+    { "name": "Express.js", "reps": 85 },
+    { "name": "HTML & CSS", "reps": 90 },
+    { "name": "JavaScript", "reps": 92 },
+    { "name": "Linux", "reps": 85 },
+    { "name": "Git", "reps": 90 }
+  ],
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "description": "A modern web application built with React. Features real-time collaboration and a sleek, intuitive interface.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Firebase"
+      ],
+      "demo": "https://example.com",
+      "github": "https://github.com",
+      "emoji": "\u26a1"
+    },
+    {
+      "title": "Project Beta",
+      "description": "An open-source tool that simplifies developer workflows. Used by thousands of developers worldwide.",
+      "technologies": [
+        "Node.js",
+        "CLI",
+        "Open Source"
+      ],
+      "demo": "",
+      "github": "https://github.com",
+      "emoji": "\ud83d\udee0"
+    },
+    {
+      "title": "Project Gamma",
+      "description": "A creative portfolio showcase with custom animations and responsive design.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "demo": "https://example.com",
+      "github": "",
+      "emoji": "\u2728"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Team Lead",
+      "company": "Jublia AI",
+      "period": "2022 \u2013 Present",
+      "description": "Leading the engineering team and driving technical delivery."
+    },
+    {
+      "title": "Assistant Team Lead",
+      "company": "Jublia AI",
+      "period": "2021 \u2013 2022",
+      "description": "Supporting team leadership and technical coordination."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Jublia AI",
+      "period": "2020 \u2013 2021",
+      "description": "Building and shipping software solutions."
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Valutac",
+      "period": "2018 \u2013 2020",
+      "description": "Developing backend systems and APIs."
+    },
+    {
+      "title": "Python Developer",
+      "company": "Freelance",
+      "period": "2018",
+      "description": "Contract Python development work."
+    },
+    {
+      "title": "IT Support",
+      "company": "PT. Inovasi Teknologi Generasi Cemerlang",
+      "period": "2016 \u2013 2018",
+      "description": "IT support and technical assistance. Jakarta, Indonesia."
+    }
+  ],
+  "articles": [
+    {
+      "slug": "what-is-mcp-agent",
+      "title": "What is an MCP Agent?",
+      "excerpt": "A simple explanation of MCP (Model Context Protocol) and how it lets AI connect to external tools and data.",
+      "date": "2025-03-07",
+      "tags": [
+        "AI",
+        "MCP",
+        "Tools"
+      ],
+      "content": "<p><strong>In simple terms:</strong> An MCP agent is a bridge that lets AI assistants (like ChatGPT or Cursor) talk to external tools—databases, APIs, your file system—so they can do more than just answer from memory. It extends what the AI can \"see\" and \"do.\"</p><p><strong>Analogy:</strong> Think of a hotel concierge. You ask for something; the concierge doesn't have everything on hand. They pick up the phone and call the kitchen, housekeeping, or the front desk. MCP is that phone system—it connects the AI to different \"departments\" (tools) so it can actually fulfill your requests.</p><p>Without MCP, the AI is limited to what it was trained on. With MCP, it can fetch live data, run code, search the web, and more. It's how AI gets superpowers.</p>"
+    },
+    {
+      "slug": "thoughts-on-clean-code",
+      "title": "Thoughts on Clean Code",
+      "excerpt": "Why writing readable code matters more than clever tricks. Reflections on maintainability and team collaboration.",
+      "date": "2025-03-01",
+      "tags": [
+        "Programming",
+        "Best Practices"
+      ],
+      "content": "<p>Clean code is code that is easy to read, understand, and modify. It's not about being clever\u2014it's about being clear.</p><p>When you write code, remember that someone else (or future you) will need to understand it. Choose descriptive names, keep functions small, and comment the \"why\" not the \"what\".</p>"
+    },
+    {
+      "slug": "building-a-personal-website-from-scratch",
+      "title": "Building a Personal Website from Scratch",
+      "excerpt": "A practical walkthrough of creating your own portfolio site without frameworks. From planning to deployment.",
+      "date": "2025-02-15",
+      "tags": [
+        "Web Development",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "content": "<p>Every developer should have a place on the web to call their own. A personal website is more than a resume\u2014it's a canvas for your ideas, a home for your projects, and often the first impression you make. In this article, I'll walk through the process of building one from scratch, without relying on heavy frameworks or build tools.</p><p>The first step is deciding what you actually need. Do you want a blog? A project showcase? A simple landing page with contact info? I recommend starting small. A single page with your name, a short bio, and links to your work is often more effective than an over-engineered site that never gets finished.</p><p>Once you have a plan, structure your content. Write down the sections you want: hero, about, projects, experience, contact. Sketch them on paper or in a doc. This outline becomes your HTML skeleton. Semantic HTML matters\u2014use header, main, section, article, and footer. Screen readers and search engines will thank you, and your future self will understand the structure at a glance.</p><p>Styling is where personality comes in. Pick a color palette and stick to it. CSS custom properties make this easy: define your primary, accent, and background colors once, then reference them everywhere. Typography matters more than most people think. A good font pairing and consistent sizing can elevate even a minimal design. Don't forget spacing\u2014generous whitespace makes content breathe.</p><p>If you're loading content from a JSON file or an API, keep your JavaScript simple. Fetch the data, render it into templates, attach event listeners. No need for a virtual DOM or state management library when you're displaying static content. Progressive enhancement is key: the site should work without JavaScript for the basics, and layer on interactivity where it adds value.</p><p>Performance is part of the design. Optimize images, minimize external requests, and avoid blocking the main thread. A fast site feels professional. Use lazy loading for below-the-fold images, and consider a service worker for offline support if you're feeling ambitious.</p><p>Deployment options are plentiful. GitHub Pages, Netlify, and Vercel all offer free hosting for static sites. Connect your repo, push your code, and you're live. Custom domains are cheap and add a nice touch. Set up HTTPS and you're done.</p><p>The best part of building your own site? You own it. No algorithm decides who sees it. No platform can shut it down. It's yours to iterate on, break, and fix. Start small, ship it, and improve over time. That's the spirit of the web.</p>"
+    }
+  ],
+  "contact": [
+    {
+      "label": "Email",
+      "url": "mailto:devdotninja@gmail.com",
+      "icon": "\u2709"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/devdotninja-prog",
+      "icon": "\u2197"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/achmadgozali",
+      "icon": "\u2197"
+    }
+  ]
+}

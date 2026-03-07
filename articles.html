@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/articles.css">
+</head>
+<body>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="llm-container">
+    <div class="thinking-bar" id="thinking-bar">
+      <span class="thinking-dots"><span></span><span></span><span></span></span>
+      <span class="thinking-label">Loading articles...</span>
+    </div>
+
+    <main class="chat-main articles-page">
+      <div class="message message-user">
+        <div class="message-avatar">You</div>
+        <div class="message-content">
+          <p>Show me your latest articles and writings.</p>
+        </div>
+      </div>
+
+      <div class="message message-ai">
+        <div class="message-avatar thinking-avatar">
+          <span class="avatar-pulse"></span>
+          <span class="avatar-icon">◆</span>
+        </div>
+        <div class="message-content response-block">
+          <div class="thinking-state" id="articles-thinking">
+            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+          </div>
+          <div class="response-content stream-in" id="articles-content">
+            <h3 class="section-title">Articles</h3>
+            <div class="articles-layout" id="articles-layout">
+              <aside class="articles-sidebar" id="articles-sidebar">
+                <div class="articles-sidebar-header">All articles</div>
+                <div class="articles-list" id="articles-list"></div>
+              </aside>
+              <div class="articles-main" id="articles-main">
+                <div class="article-view" id="article-view"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="llm-footer">
+    <span class="footer-status">Ready</span>
+    <a href="index.html" class="footer-link">← Back to Portfolio</a>
+    <span id="year"></span>
+  </footer>
+
+  <nav class="llm-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Work</a>
+    <a href="articles.html">Articles</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <script src="js/articles.js"></script>
+</body>
+</html>
