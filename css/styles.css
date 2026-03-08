@@ -143,7 +143,6 @@ body {
 .message-user {
   flex-direction: row-reverse;
   margin-left: auto;
-  justify-content: flex-end;
 }
 
 .message-user .message-content {

@@ -1,6 +1,13 @@
 /* Articles page - extends LLM theme */
 .articles-page { padding-top: 5.5rem; }
 
+/* Match index page layout: diamond left, content right, left-aligned (like About Me, Projects, etc.) */
+.articles-page .message-ai {
+  flex-direction: row;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+
 /* When viewing article: center layout, widen for easier reading */
 body.article-viewing .llm-container {
   max-width: 1100px;
