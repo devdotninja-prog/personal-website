@@ -140,6 +140,12 @@ body {
   align-items: flex-start;
 }
 
+.message-user {
+  flex-direction: row-reverse;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
 .message-user .message-content {
   background: var(--llm-surface);
   border: 1px solid var(--llm-border);
