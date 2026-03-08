@@ -260,6 +260,22 @@ body.article-viewing .articles-main {
   .article-full-content p {
     margin-bottom: 1.25rem;
   }
+
+  /* Share modal – comfortable top/bottom gap on phone */
+  .share-modal {
+    padding: 2rem 1.25rem;
+    padding-top: max(2rem, env(safe-area-inset-top));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+
+  .share-modal-content {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .share-preview {
+    max-height: min(50vh, 360px);
+  }
 }
 
 .article-header-row {
@@ -309,6 +325,9 @@ body.article-viewing .articles-main {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 .share-modal-backdrop {

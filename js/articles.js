@@ -125,6 +125,8 @@ const STORY_WIDTH = 1080;
 const STORY_HEIGHT = 1920;
 const SITE_URL = 'https://achgz.dev';
 
+let shareModalKeydownHandler = null;
+
 function getParagraphs(html) {
   if (!html) return [];
   const div = document.createElement('div');
@@ -308,7 +310,13 @@ async function openShareModal(article) {
   if (!canvas) return;
 
   const existing = document.getElementById('share-modal');
-  if (existing) existing.remove();
+  if (existing) {
+    existing.remove();
+    if (shareModalKeydownHandler) {
+      document.removeEventListener('keydown', shareModalKeydownHandler);
+      shareModalKeydownHandler = null;
+    }
+  }
 
   const dataUrl = canvas.toDataURL('image/png');
   const imageFile = dataUrlToFile(dataUrl, `achgz-${article.slug}-story.png`);
@@ -342,14 +350,17 @@ async function openShareModal(article) {
 
   const close = () => {
     modal.remove();
-    document.removeEventListener('keydown', onKeydown);
+    if (shareModalKeydownHandler) {
+      document.removeEventListener('keydown', shareModalKeydownHandler);
+      shareModalKeydownHandler = null;
+    }
   };
-  const onKeydown = (e) => {
+  shareModalKeydownHandler = (e) => {
     if (e.key === 'Escape') close();
   };
   modal.querySelector('.share-modal-backdrop').addEventListener('click', close);
   modal.querySelector('.share-close').addEventListener('click', close);
-  document.addEventListener('keydown', onKeydown);
+  document.addEventListener('keydown', shareModalKeydownHandler);
   document.body.appendChild(modal);
 }
 
