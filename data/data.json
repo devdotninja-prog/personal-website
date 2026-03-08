@@ -112,6 +112,19 @@
   ],
   "articles": [
     {
+      "slug": "add-atlassian-mcp-cursor-http-mode",
+      "title": "How to Add Atlassian MCP on Cursor Using HTTP Mode",
+      "excerpt": "A step-by-step guide to configuring the Atlassian MCP Server in Cursor via HTTP mode, so you can connect to Jira, Confluence, and other Atlassian tools directly from your IDE.",
+      "date": "2025-03-08",
+      "tags": [
+        "Cursor",
+        "MCP",
+        "Atlassian",
+        "Tools"
+      ],
+      "content": "<p>Model Context Protocol (MCP) lets AI assistants like Cursor connect to external tools and services. Atlassian offers an MCP server that gives you access to Jira, Confluence, and other Atlassian products right inside Cursor. Here's how to add it using HTTP mode.</p><h3>Step 1: Configure mcp.json</h3><p>Open your Cursor MCP configuration file at <code>~/.cursor/mcp.json</code>. Add the Atlassian MCP Server with its HTTP endpoint:</p><figure class=\"article-figure\"><img src=\"assets/atlassian-mcp-config.png\" alt=\"mcp.json configuration for Atlassian MCP Server in HTTP mode\" /></figure><p>Your <code>mcp.json</code> should include the <code>mcpServers</code> object with <code>Atlassian-MCP-Server</code> pointing to <code>https://mcp.atlassian.com/v1/mcp</code>. This URL is the HTTP endpoint that Cursor will use to communicate with Atlassian's MCP server.</p><h3>Step 2: Verify in Cursor Settings</h3><p>After saving <code>mcp.json</code>, open Cursor and go to <strong>Settings → Tools → Installed MCP Servers</strong>. You should see the Atlassian MCP Server listed with its tools and resources.</p><figure class=\"article-figure\"><img src=\"assets/atlassian-mcp-tools.png\" alt=\"Atlassian MCP Server enabled in Cursor Tools settings\" /></figure><p>Make sure the toggle next to <strong>Atlassian-MCP-Server</strong> is enabled (green). The server typically exposes 31 tools and 4 resources—everything you need to query Jira issues, search Confluence, and interact with your Atlassian workspace.</p><h3>Step 3: Authenticate</h3><p>When you first use an Atlassian MCP tool, Cursor will prompt you to authenticate with your Atlassian account. Follow the OAuth flow to grant access. Once connected, you can ask Cursor to create Jira tickets, search Confluence pages, or fetch project data—all without leaving your editor.</p><p>HTTP mode is ideal when you don't want to run a local MCP server process. The connection goes directly to Atlassian's hosted endpoint, so setup is minimal and updates are handled on their side.</p>"
+    },
+    {
       "slug": "what-is-mcp-agent",
       "title": "What is an MCP Agent?",
       "excerpt": "A simple explanation of MCP (Model Context Protocol) and how it lets AI connect to external tools and data.",
