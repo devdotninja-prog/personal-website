@@ -115,7 +115,7 @@
       "slug": "add-atlassian-mcp-cursor-http-mode",
       "title": "How to Add Atlassian MCP on Cursor Using HTTP Mode",
       "excerpt": "A step-by-step guide to configuring the Atlassian MCP Server in Cursor via HTTP mode, so you can connect to Jira, Confluence, and other Atlassian tools directly from your IDE.",
-      "date": "2025-03-08",
+      "date": "2026-03-08",
       "tags": [
         "Cursor",
         "MCP",
@@ -128,7 +128,7 @@
       "slug": "what-is-mcp-agent",
       "title": "What is an MCP Agent?",
       "excerpt": "A simple explanation of MCP (Model Context Protocol) and how it lets AI connect to external tools and data.",
-      "date": "2025-03-07",
+      "date": "2026-03-07",
       "tags": [
         "AI",
         "MCP",
