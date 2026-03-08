@@ -121,22 +121,20 @@ const SHARE_COLORS = {
   border: 'rgba(172, 200, 162, 0.3)',
 };
 
-const CARD_MAX_WIDTH = 640;
-const CARD_PAD = 32;
-const CARD_INNER_PAD = 24;
-const TITLE_FONT = '600 28px Inter, system-ui, sans-serif';
-const TITLE_LINE_HEIGHT = 38;
-const EXCERPT_FONT = '400 18px Inter, system-ui, sans-serif';
-const EXCERPT_LINE_HEIGHT = 28;
-const BRANDING_FONT = '500 14px Inter, system-ui, sans-serif';
+const STORY_WIDTH = 1080;
+const STORY_HEIGHT = 1920;
 const SITE_URL = 'https://achgz.dev';
 
-function getShortExcerpt(article, maxChars = 120) {
-  const excerpt = article.excerpt || '';
-  if (excerpt.length <= maxChars) return excerpt;
-  const truncated = excerpt.slice(0, maxChars).trim();
-  const lastSpace = truncated.lastIndexOf(' ');
-  return (lastSpace > maxChars * 0.6 ? truncated.slice(0, lastSpace) : truncated) + '…';
+function getParagraphs(html) {
+  if (!html) return [];
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  const blocks = [];
+  div.querySelectorAll('p, h1, h2, h3').forEach((el) => {
+    const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (t) blocks.push(t);
+  });
+  return blocks;
 }
 
 function wrapText(ctx, text, maxWidth) {
@@ -159,67 +157,104 @@ function wrapText(ctx, text, maxWidth) {
 
 function drawShareCard(article) {
   const canvas = document.createElement('canvas');
+  canvas.width = STORY_WIDTH;
+  canvas.height = STORY_HEIGHT;
   const ctx = canvas.getContext('2d');
   if (!ctx) return null;
 
-  ctx.font = TITLE_FONT;
-  const contentWidth = CARD_MAX_WIDTH - CARD_PAD * 2 - CARD_INNER_PAD * 2;
-  const titleLines = wrapText(ctx, article.title, contentWidth);
-  const excerpt = getShortExcerpt(article);
-  ctx.font = EXCERPT_FONT;
-  const excerptLines = wrapText(ctx, excerpt, contentWidth);
+  const padH = 64;
+  const padV = 80;
+  const contentWidth = STORY_WIDTH - padH * 2;
+  const cardPadding = 80;
+  const innerContentWidth = contentWidth - cardPadding * 2;
 
-  const titleHeight = titleLines.length * TITLE_LINE_HEIGHT;
-  const excerptHeight = excerptLines.length * EXCERPT_LINE_HEIGHT;
-  const cardContentHeight = CARD_INNER_PAD * 2 + titleHeight + 16 + excerptHeight;
-  const brandingHeight = 52;
-  const totalHeight = CARD_PAD * 2 + cardContentHeight + brandingHeight;
+  const titleFont = '600 48px Roboto, system-ui, sans-serif';
+  const bodyFont = '400 30px Roboto, system-ui, sans-serif';
+  const urlFont = '400 28px Roboto, system-ui, sans-serif';
 
-  canvas.width = CARD_MAX_WIDTH;
-  canvas.height = Math.ceil(totalHeight);
+  ctx.font = titleFont;
+  const titleLines = wrapText(ctx, article.title, innerContentWidth);
+  const paragraphs = getParagraphs(article.content);
+  ctx.font = bodyFont;
+  const bodyLineHeight = 46;
+  const paragraphGap = 32;
+  const gap = 48;
+  const urlHeight = 72;
+  const readMoreHeight = 56;
+  const cardTop = padV;
+  const cardHeight = STORY_HEIGHT - padV * 2 - urlHeight;
+  const cardBottom = cardTop + cardHeight - cardPadding - readMoreHeight;
 
-  const cardTop = CARD_PAD;
-  const cardHeight = cardContentHeight;
-
-  // Background
+  // Full background – website theme (fills entire story, no black bars)
   ctx.fillStyle = SHARE_COLORS.bg;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, STORY_WIDTH, STORY_HEIGHT);
 
-  // Content card (compact, Carbon-style)
+  // Subtle gradient overlay
+  const grad = ctx.createLinearGradient(0, 0, 0, STORY_HEIGHT);
+  grad.addColorStop(0, 'rgba(172, 200, 162, 0.06)');
+  grad.addColorStop(0.5, 'transparent');
+  grad.addColorStop(1, 'rgba(172, 200, 162, 0.08)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, STORY_WIDTH, STORY_HEIGHT);
+
+  // Content card – fills most of the story (top to bottom)
   ctx.fillStyle = SHARE_COLORS.surface;
   ctx.strokeStyle = SHARE_COLORS.border;
-  ctx.lineWidth = 1;
-  roundRect(ctx, CARD_PAD, cardTop, contentWidth + CARD_INNER_PAD * 2, cardHeight, 12);
+  ctx.lineWidth = 2;
+  roundRect(ctx, padH, cardTop, contentWidth, cardHeight, 28);
   ctx.fill();
   ctx.stroke();
 
+  // Clip to card so content doesn't overflow
+  ctx.save();
+  ctx.beginPath();
+  roundRect(ctx, padH, cardTop, contentWidth, cardHeight, 28);
+  ctx.clip();
+
+  const titleLineHeight = 60;
+
   // Title
   ctx.fillStyle = SHARE_COLORS.accent;
-  ctx.font = TITLE_FONT;
+  ctx.font = titleFont;
   ctx.textAlign = 'left';
-  let y = cardTop + CARD_INNER_PAD + 26;
+  let y = cardTop + cardPadding + 40;
   titleLines.forEach((line) => {
-    ctx.fillText(line, CARD_PAD + CARD_INNER_PAD, y);
-    y += TITLE_LINE_HEIGHT;
+    ctx.fillText(line, padH + cardPadding, y);
+    y += titleLineHeight;
   });
 
-  // Excerpt
+  // Body – paragraph by paragraph with spacing
   ctx.fillStyle = SHARE_COLORS.text;
-  ctx.font = EXCERPT_FONT;
-  y += 16;
-  excerptLines.forEach((line) => {
-    ctx.fillText(line, CARD_PAD + CARD_INNER_PAD, y);
-    y += EXCERPT_LINE_HEIGHT;
-  });
+  ctx.font = bodyFont;
+  y += gap;
+  let contentCut = false;
+  for (let i = 0; i < paragraphs.length && !contentCut; i++) {
+    if (i > 0) y += paragraphGap;
+    const lines = wrapText(ctx, paragraphs[i], innerContentWidth);
+    for (const line of lines) {
+      if (y + bodyLineHeight > cardBottom) {
+        contentCut = true;
+        break;
+      }
+      ctx.fillText(line, padH + cardPadding, y);
+      y += bodyLineHeight;
+    }
+  }
 
-  // Owner branding + website link
-  ctx.fillStyle = SHARE_COLORS.muted;
-  ctx.font = BRANDING_FONT;
-  ctx.textAlign = 'center';
-  ctx.fillText('achgz.dev', canvas.width / 2, canvas.height - 34);
-  ctx.font = '400 12px Inter, system-ui, sans-serif';
+  // "Read more" when content was cut off
+  if (contentCut) {
+    ctx.fillStyle = SHARE_COLORS.accent;
+    ctx.font = '500 26px Roboto, system-ui, sans-serif';
+    ctx.fillText('Read more at achgz.dev →', padH + cardPadding, cardBottom + 34);
+  }
+
+  ctx.restore();
+
+  // Website link – below card
   ctx.fillStyle = SHARE_COLORS.accent;
-  ctx.fillText(SITE_URL, canvas.width / 2, canvas.height - 14);
+  ctx.font = urlFont;
+  ctx.textAlign = 'center';
+  ctx.fillText(SITE_URL, STORY_WIDTH / 2, STORY_HEIGHT - padV - 20);
 
   return canvas;
 }
