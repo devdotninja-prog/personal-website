@@ -1,100 +1,100 @@
 {
   "profile": {
     "name": "Achmad Gozali",
-    "tagline": "Software Engineer & Gym Enthusiast",
-    "bio": "I started my journey fixing computers for people who 'didn’t touch anything, it just stopped working.' Since those IT support days, I’ve evolved into a Fullstack Developer and a Bug Bounty Hunter, learning that the best way to build software is to understand exactly how it might break. Today, I’m an engineer obsessed with AI Orchestration, turning my 8+ years of self-taught experience into smarter, faster, and more secure AI-driven solutions.",
-    "contactText": "I'd love to hear from you. Whether it's a project, collaboration, or just a hello \u2014 reach out.",
+    "tagline": "Building robust software and chasing continuous progress. Code by day, iron by dawn — engineer with discipline.",
+    "bio": "I started my journey fixing computers for people who 'didn't touch anything, it just stopped working.' Since those IT support days, I've evolved into a Fullstack Developer and a Bug Bounty Hunter, learning that the best way to build software is to understand exactly how it might break.",
+    "bio2": "Today, I'm an engineer obsessed with AI Orchestration, turning my self-taught experience into smarter, faster, and more secure AI-driven solutions. When I'm not shipping features, you'll find me at the gym — because the same discipline that builds muscle builds great software.",
+    "contactText": "Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open. Let's build something great together.",
     "avatar": "assets/avatar.png",
     "email": "devdotninja@gmail.com",
     "location": "Bulukumba, Indonesia",
+    "role": "Team Lead at Jublia AI",
+    "years": "8+",
+    "projects": "15+",
     "social": [
       {
         "name": "GitHub",
-        "url": "https://github.com/devdotninja-prog",
-        "icon": "\u2197"
+        "url": "https://github.com/devdotninja-prog"
       },
       {
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/achmad-gozali-32b840130",
-        "icon": "\u2197"
+        "url": "https://www.linkedin.com/in/achmad-gozali-32b840130"
       },
       {
         "name": "Twitter",
-        "url": "https://twitter.com/devdotninja",
-        "icon": "\u2197"
+        "url": "https://twitter.com/devdotninja"
       }
     ]
   },
   "skills": [
-    { "name": "Python", "reps": 90 },
-    { "name": "Flask", "reps": 88 },
-    { "name": "Express.js", "reps": 85 },
-    { "name": "HTML & CSS", "reps": 90 },
-    { "name": "JavaScript", "reps": 92 },
-    { "name": "Linux", "reps": 85 },
-    { "name": "Git", "reps": 90 }
+    { "name": "Python" },
+    { "name": "Flask" },
+    { "name": "Express.js" },
+    { "name": "JavaScript" },
+    { "name": "TypeScript" },
+    { "name": "HTML & CSS" },
+    { "name": "Linux" },
+    { "name": "Git" },
+    { "name": "AI Orchestration" },
+    { "name": "Bug Bounty" }
   ],
   "projects": [
     {
-      "title": "Project Alpha",
-      "description": "A modern web application built with React. Features real-time collaboration and a sleek, intuitive interface.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Firebase"
-      ],
-      "demo": "https://example.com",
-      "github": "https://github.com",
-      "emoji": "\u26a1"
-    },
-    {
-      "title": "Project Beta",
-      "description": "An open-source tool that simplifies developer workflows. Used by thousands of developers worldwide.",
-      "technologies": [
-        "Node.js",
-        "CLI",
-        "Open Source"
-      ],
+      "title": "AI Orchestration Platform",
+      "description": "A platform for orchestrating multiple AI agents and workflows. Built with Python and modern async patterns.",
+      "technologies": ["Python", "AI", "Flask"],
       "demo": "",
-      "github": "https://github.com",
-      "emoji": "\ud83d\udee0"
+      "github": "",
+      "emoji": "⚡"
     },
     {
-      "title": "Project Gamma",
-      "description": "A creative portfolio showcase with custom animations and responsive design.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "demo": "https://example.com",
+      "title": "Security Scanner",
+      "description": "Automated security scanning tool for web applications. Finds vulnerabilities before the bad guys do.",
+      "technologies": ["Python", "Security", "CLI"],
+      "demo": "",
       "github": "",
-      "emoji": "\u2728"
+      "emoji": "🔒"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Real-time analytics dashboard with beautiful visualizations. Makes data look good.",
+      "technologies": ["Express.js", "React", "D3.js"],
+      "demo": "",
+      "github": "",
+      "emoji": "📊"
+    },
+    {
+      "title": "Developer CLI Tools",
+      "description": "A collection of command-line tools to boost developer productivity. Ship faster, break less.",
+      "technologies": ["Node.js", "CLI", "TypeScript"],
+      "demo": "",
+      "github": "",
+      "emoji": "🛠️"
     }
   ],
   "experience": [
     {
       "title": "Team Lead",
       "company": "Jublia AI",
-      "period": "2022 \u2013 Present",
-      "description": "Leading the engineering team and driving technical delivery."
+      "period": "2022 — Present",
+      "description": "Leading the engineering team and driving technical delivery. Focusing on AI orchestration and system architecture."
     },
     {
       "title": "Assistant Team Lead",
       "company": "Jublia AI",
-      "period": "2021 \u2013 2022",
+      "period": "2021 — 2022",
       "description": "Supporting team leadership and technical coordination."
     },
     {
       "title": "Software Engineer",
       "company": "Jublia AI",
-      "period": "2020 \u2013 2021",
+      "period": "2020 — 2021",
       "description": "Building and shipping software solutions."
     },
     {
       "title": "Back End Developer",
       "company": "Valutac",
-      "period": "2018 \u2013 2020",
+      "period": "2018 — 2020",
       "description": "Developing backend systems and APIs."
     },
     {
@@ -106,8 +106,25 @@
     {
       "title": "IT Support",
       "company": "PT. Inovasi Teknologi Generasi Cemerlang",
-      "period": "2016 \u2013 2018",
+      "period": "2016 — 2018",
       "description": "IT support and technical assistance. Jakarta, Indonesia."
+    }
+  ],
+  "contact": [
+    {
+      "label": "Email",
+      "url": "mailto:devdotninja@gmail.com",
+      "icon": "✉️"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/devdotninja-prog",
+      "icon": "⌥"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/achmad-gozali-32b840130",
+      "icon": "in"
     }
   ],
   "articles": [
@@ -116,24 +133,15 @@
       "title": "How to Add Atlassian MCP on Cursor Using HTTP Mode",
       "excerpt": "A step-by-step guide to configuring the Atlassian MCP Server in Cursor via HTTP mode, so you can connect to Jira, Confluence, and other Atlassian tools directly from your IDE.",
       "date": "2026-03-08",
-      "tags": [
-        "Cursor",
-        "MCP",
-        "Atlassian",
-        "Tools"
-      ],
-      "content": "<p>Model Context Protocol (MCP) lets AI assistants like Cursor connect to external tools and services. Atlassian offers an MCP server that gives you access to Jira, Confluence, and other Atlassian products right inside Cursor. Here's how to add it using HTTP mode.</p><h3>Step 1: Configure mcp.json</h3><p>Open your Cursor MCP configuration file at <code>~/.cursor/mcp.json</code>. Add the Atlassian MCP Server with its HTTP endpoint:</p><figure class=\"article-figure\"><img src=\"assets/atlassian-mcp-config.png\" alt=\"mcp.json configuration for Atlassian MCP Server in HTTP mode\" /></figure><p>Your <code>mcp.json</code> should include the <code>mcpServers</code> object with <code>Atlassian-MCP-Server</code> pointing to <code>https://mcp.atlassian.com/v1/mcp</code>. This URL is the HTTP endpoint that Cursor will use to communicate with Atlassian's MCP server.</p><h3>Step 2: Verify in Cursor Settings</h3><p>After saving <code>mcp.json</code>, open Cursor and go to <strong>Settings → Tools → Installed MCP Servers</strong>. You should see the Atlassian MCP Server listed with its tools and resources.</p><figure class=\"article-figure\"><img src=\"assets/atlassian-mcp-tools.png\" alt=\"Atlassian MCP Server enabled in Cursor Tools settings\" /></figure><p>Make sure the toggle next to <strong>Atlassian-MCP-Server</strong> is enabled (green). The server typically exposes 31 tools and 4 resources—everything you need to query Jira issues, search Confluence, and interact with your Atlassian workspace.</p><h3>Step 3: Authenticate</h3><p>When you first use an Atlassian MCP tool, Cursor will prompt you to authenticate with your Atlassian account. Follow the OAuth flow to grant access. Once connected, you can ask Cursor to create Jira tickets, search Confluence pages, or fetch project data—all without leaving your editor.</p><p>HTTP mode is ideal when you don't want to run a local MCP server process. The connection goes directly to Atlassian's hosted endpoint, so setup is minimal and updates are handled on their side.</p>"
+      "tags": ["Cursor", "MCP", "Atlassian", "Tools"],
+      "content": "<p>Model Context Protocol (MCP) lets AI assistants like Cursor connect to external tools and services. Atlassian offers an MCP server that gives you access to Jira, Confluence, and other Atlassian products right inside Cursor. Here's how to add it using HTTP mode.</p><h3>Step 1: Configure mcp.json</h3><p>Open your Cursor MCP configuration file at <code>~/.cursor/mcp.json</code>. Add the Atlassian MCP Server with its HTTP endpoint.</p><h3>Step 2: Verify in Cursor Settings</h3><p>After saving <code>mcp.json</code>, open Cursor and go to <strong>Settings → Tools → Installed MCP Servers</strong>. You should see the Atlassian MCP Server listed with its tools and resources.</p><h3>Step 3: Authenticate</h3><p>When you first use an Atlassian MCP tool, Cursor will prompt you to authenticate with your Atlassian account. Follow the OAuth flow to grant access. Once connected, you can ask Cursor to create Jira tickets, search Confluence pages, or fetch project data—all without leaving your editor.</p>"
     },
     {
       "slug": "what-is-mcp-agent",
       "title": "What is an MCP Agent?",
       "excerpt": "A simple explanation of MCP (Model Context Protocol) and how it lets AI connect to external tools and data.",
       "date": "2026-03-07",
-      "tags": [
-        "AI",
-        "MCP",
-        "Tools"
-      ],
+      "tags": ["AI", "MCP", "Tools"],
       "content": "<p><strong>In simple terms:</strong> An MCP agent is a bridge that lets AI assistants (like ChatGPT or Cursor) talk to external tools—databases, APIs, your file system—so they can do more than just answer from memory. It extends what the AI can \"see\" and \"do.\"</p><p><strong>Analogy:</strong> Think of a hotel concierge. You ask for something; the concierge doesn't have everything on hand. They pick up the phone and call the kitchen, housekeeping, or the front desk. MCP is that phone system—it connects the AI to different \"departments\" (tools) so it can actually fulfill your requests.</p><p>Without MCP, the AI is limited to what it was trained on. With MCP, it can fetch live data, run code, search the web, and more. It's how AI gets superpowers.</p>"
     },
     {
@@ -141,41 +149,16 @@
       "title": "Thoughts on Clean Code",
       "excerpt": "Why writing readable code matters more than clever tricks. Reflections on maintainability and team collaboration.",
       "date": "2025-03-01",
-      "tags": [
-        "Programming",
-        "Best Practices"
-      ],
-      "content": "<p>Clean code is code that is easy to read, understand, and modify. It's not about being clever\u2014it's about being clear.</p><p>When you write code, remember that someone else (or future you) will need to understand it. Choose descriptive names, keep functions small, and comment the \"why\" not the \"what\".</p>"
+      "tags": ["Programming", "Best Practices"],
+      "content": "<p>Clean code is code that is easy to read, understand, and modify. It's not about being clever—it's about being clear.</p><p>When you write code, remember that someone else (or future you) will need to understand it. Choose descriptive names, keep functions small, and comment the \"why\" not the \"what\".</p><p>Some principles I follow:</p><ul><li><strong>Single Responsibility</strong> — Each function does one thing well.</li><li><strong>Meaningful names</strong> — Variables and functions should tell you what they do.</li><li><strong>Don't repeat yourself (DRY)</strong> — Duplication is a sign something needs refactoring.</li><li><strong>Write tests</strong> — Tests are documentation that doesn't lie.</li></ul><p>Remember: Code is read more often than it's written. Optimize for the reader.</p>"
     },
     {
       "slug": "building-a-personal-website-from-scratch",
       "title": "Building a Personal Website from Scratch",
       "excerpt": "A practical walkthrough of creating your own portfolio site without frameworks. From planning to deployment.",
       "date": "2025-02-15",
-      "tags": [
-        "Web Development",
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "content": "<p>Every developer should have a place on the web to call their own. A personal website is more than a resume\u2014it's a canvas for your ideas, a home for your projects, and often the first impression you make. In this article, I'll walk through the process of building one from scratch, without relying on heavy frameworks or build tools.</p><p>The first step is deciding what you actually need. Do you want a blog? A project showcase? A simple landing page with contact info? I recommend starting small. A single page with your name, a short bio, and links to your work is often more effective than an over-engineered site that never gets finished.</p><p>Once you have a plan, structure your content. Write down the sections you want: hero, about, projects, experience, contact. Sketch them on paper or in a doc. This outline becomes your HTML skeleton. Semantic HTML matters\u2014use header, main, section, article, and footer. Screen readers and search engines will thank you, and your future self will understand the structure at a glance.</p><p>Styling is where personality comes in. Pick a color palette and stick to it. CSS custom properties make this easy: define your primary, accent, and background colors once, then reference them everywhere. Typography matters more than most people think. A good font pairing and consistent sizing can elevate even a minimal design. Don't forget spacing\u2014generous whitespace makes content breathe.</p><p>If you're loading content from a JSON file or an API, keep your JavaScript simple. Fetch the data, render it into templates, attach event listeners. No need for a virtual DOM or state management library when you're displaying static content. Progressive enhancement is key: the site should work without JavaScript for the basics, and layer on interactivity where it adds value.</p><p>Performance is part of the design. Optimize images, minimize external requests, and avoid blocking the main thread. A fast site feels professional. Use lazy loading for below-the-fold images, and consider a service worker for offline support if you're feeling ambitious.</p><p>Deployment options are plentiful. GitHub Pages, Netlify, and Vercel all offer free hosting for static sites. Connect your repo, push your code, and you're live. Custom domains are cheap and add a nice touch. Set up HTTPS and you're done.</p><p>The best part of building your own site? You own it. No algorithm decides who sees it. No platform can shut it down. It's yours to iterate on, break, and fix. Start small, ship it, and improve over time. That's the spirit of the web.</p>"
-    }
-  ],
-  "contact": [
-    {
-      "label": "Email",
-      "url": "mailto:devdotninja@gmail.com",
-      "icon": "\u2709"
-    },
-    {
-      "label": "GitHub",
-      "url": "https://github.com/devdotninja-prog",
-      "icon": "\u2197"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/achmad-gozali-32b840130",
-      "icon": "\u2197"
+      "tags": ["Web Development", "HTML", "CSS", "JavaScript"],
+      "content": "<p>Every developer should have a place on the web to call their own. A personal website is more than a resume—it's a canvas for your ideas, a home for your projects, and often the first impression you make.</p><h3>Start Small</h3><p>I recommend starting with a single page: your name, a short bio, and links to your work. A minimal site that's done beats an elaborate one that's never finished.</p><h3>Structure Your Content</h3><p>Write down the sections you want: hero, about, projects, contact. Sketch them out. Use semantic HTML—<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>. Screen readers and search engines will thank you.</p><h3>Style with Purpose</h3><p>Pick a color palette and stick to it. CSS custom properties make this easy. Typography matters more than most people think. Don't forget spacing—generous whitespace makes content breathe.</p><h3>Keep JavaScript Simple</h3><p>Fetch data, render it, attach event listeners. No need for a virtual DOM or state management when you're displaying static content. Progressive enhancement is key: the site should work without JavaScript for the basics.</p>"
     }
   ]
 }

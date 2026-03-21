@@ -3,151 +3,306 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Thinking...</title>
+  <title>Achmad Gozali — Software Engineer</title>
+  <meta name="description" content="Software Engineer specializing in AI Orchestration, Fullstack Development, and Bug Bounty Hunting. Based in Indonesia.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Cursor glow - follows mouse, LLM "thinking" vibe -->
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-  <div class="cursor-glow-inner" id="cursor-glow-inner" aria-hidden="true"></div>
-  <div class="llm-container">
-    <!-- Thinking indicator (global) -->
-    <div class="thinking-bar" id="thinking-bar">
-      <span class="thinking-dots">
-        <span></span><span></span><span></span>
-      </span>
-      <span class="thinking-label">Thinking...</span>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ag<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </nav>
 
-    <!-- Chat-style content -->
-    <main class="chat-main">
-      <!-- User prompt -->
-      <div class="message message-user">
-        <div class="message-avatar">You</div>
-        <div class="message-content">
-          <p>Tell me about yourself — who you are, your skills, projects, and how to get in touch.</p>
-        </div>
-      </div>
-
-      <!-- AI Response - Hero -->
-      <div class="message message-ai" id="hero">
-        <div class="message-avatar thinking-avatar">
-          <span class="avatar-pulse"></span>
-          <span class="avatar-icon">◆</span>
-        </div>
-        <div class="message-content response-block">
-          <div class="thinking-state" id="hero-thinking">
-            <span class="thinking-dots inline">
-              <span></span><span></span><span></span>
-            </span>
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-title">
+            <span class="name" id="hero-name">Achmad Gozali</span>
+          </h1>
+          <p class="hero-tagline" id="hero-tagline">
+            Building <span class="highlight">robust software</span> and chasing <span class="highlight">continuous progress</span>. Code by day, iron by dawn — engineer with discipline.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </div>
-          <div class="response-content stream-in" id="hero-content">
-            <p class="response-greeting">Hello! I'm <strong class="hero-name">Loading...</strong></p>
-            <p class="hero-tagline">Loading...</p>
-            <div class="response-cta">
-              <a href="#about" class="btn btn-primary">Learn more about me</a>
-              <a href="#contact" class="btn btn-outline">Get in touch</a>
+          <div class="hero-stats" id="hero-stats">
+            <div class="stat">
+              <span class="stat-value" id="stat-years">8+</span>
+              <span class="stat-label">Years Building</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="stat-projects">15+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">Team Lead</span>
+              <span class="stat-label">Currently</span>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- AI Response - About -->
-      <div class="message message-ai" id="about">
-        <div class="message-avatar thinking-avatar">
-          <span class="avatar-pulse"></span>
-          <span class="avatar-icon">◆</span>
-        </div>
-        <div class="message-content response-block">
-          <div class="thinking-state" id="about-thinking">
-            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-label">01 — About</div>
+        <h2 class="section-title">The person behind the code</h2>
+        
+        <div class="about-grid">
+          <div class="about-main fade-in">
+            <p class="about-bio" id="about-bio">
+              I started my journey fixing computers for people who "didn't touch anything, it just stopped working." Since those IT support days, I've evolved into a Fullstack Developer and a Bug Bounty Hunter, learning that the best way to build software is to understand exactly how it might break.
+            </p>
+            <p class="about-bio">
+              Today, I'm an engineer obsessed with <strong>AI Orchestration</strong>, turning my self-taught experience into smarter, faster, and more secure AI-driven solutions. When I'm not shipping features, you'll find me at the gym — because the same discipline that builds muscle builds great software.
+            </p>
+            
+            <div class="about-details" id="about-details">
+              <div class="detail-item">
+                <span class="icon">📍</span>
+                <span class="label">Location:</span>
+                <span class="value">Bulukumba, Indonesia</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">✉️</span>
+                <span class="label">Email:</span>
+                <span class="value">devdotninja@gmail.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">💼</span>
+                <span class="label">Role:</span>
+                <span class="value">Team Lead at Jublia AI</span>
+              </div>
+            </div>
           </div>
-          <div class="response-content stream-in" id="about-content">
-            <h3 class="section-title">About Me</h3>
-            <div class="about-inner">
-              <div class="about-image"><div class="image-placeholder"></div></div>
-              <div class="about-text">
-                <p class="about-bio">Loading...</p>
-                <div class="skills-list" id="skills-list"></div>
+          
+          <div class="about-skills fade-in">
+            <div class="skills-container">
+              <div class="skills-header">
+                <span class="skills-title">Technical Arsenal</span>
+              </div>
+              <div class="skills-list" id="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">AI Orchestration</span>
+                <span class="skill-tag">Bug Bounty</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- AI Response - Projects -->
-      <div class="message message-ai" id="projects">
-        <div class="message-avatar thinking-avatar">
-          <span class="avatar-pulse"></span>
-          <span class="avatar-icon">◆</span>
-        </div>
-        <div class="message-content response-block">
-          <div class="thinking-state" id="projects-thinking">
-            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
-          </div>
-          <div class="response-content stream-in" id="projects-content">
-            <h3 class="section-title">Selected Work</h3>
-            <div class="projects-grid" id="projects-grid"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Response - Experience -->
-      <div class="message message-ai" id="experience">
-        <div class="message-avatar thinking-avatar">
-          <span class="avatar-pulse"></span>
-          <span class="avatar-icon">◆</span>
-        </div>
-        <div class="message-content response-block">
-          <div class="thinking-state" id="experience-thinking">
-            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
-          </div>
-          <div class="response-content stream-in" id="experience-content">
-            <h3 class="section-title">Experience</h3>
-            <div class="timeline" id="timeline"></div>
+        <div class="experience-section fade-in">
+          <div class="section-label">02 — Experience</div>
+          <h3 class="section-title">Where I've been</h3>
+          
+          <div class="timeline" id="timeline">
+            <div class="timeline-item">
+              <span class="timeline-date">2022 — Present</span>
+              <h4 class="timeline-title">Team Lead</h4>
+              <p class="timeline-company">Jublia AI</p>
+              <p class="timeline-desc">Leading the engineering team and driving technical delivery. Focusing on AI orchestration and system architecture.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">2021 — 2022</span>
+              <h4 class="timeline-title">Assistant Team Lead</h4>
+              <p class="timeline-company">Jublia AI</p>
+              <p class="timeline-desc">Supporting team leadership and technical coordination.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">2020 — 2021</span>
+              <h4 class="timeline-title">Software Engineer</h4>
+              <p class="timeline-company">Jublia AI</p>
+              <p class="timeline-desc">Building and shipping software solutions.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">2018 — 2020</span>
+              <h4 class="timeline-title">Back End Developer</h4>
+              <p class="timeline-company">Valutac</p>
+              <p class="timeline-desc">Developing backend systems and APIs.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- AI Response - Contact -->
-      <div class="message message-ai" id="contact">
-        <div class="message-avatar thinking-avatar">
-          <span class="avatar-pulse"></span>
-          <span class="avatar-icon">◆</span>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-title">Things I've built</h2>
+        
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">⚡</div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View Demo">↗</a>
+                <a href="#" class="project-link" aria-label="View GitHub">⌥</a>
+              </div>
+            </div>
+            <h3 class="project-title">AI Orchestration Platform</h3>
+            <p class="project-desc">A platform for orchestrating multiple AI agents and workflows. Built with Python and modern async patterns.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">AI</span>
+              <span class="project-tag">Flask</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🔒</div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View Demo">↗</a>
+                <a href="#" class="project-link" aria-label="View GitHub">⌥</a>
+              </div>
+            </div>
+            <h3 class="project-title">Security Scanner</h3>
+            <p class="project-desc">Automated security scanning tool for web applications. Finds vulnerabilities before the bad guys do.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Security</span>
+              <span class="project-tag">CLI</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">📊</div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View Demo">↗</a>
+                <a href="#" class="project-link" aria-label="View GitHub">⌥</a>
+              </div>
+            </div>
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-desc">Real-time analytics dashboard with beautiful visualizations. Makes data look good.</p>
+            <div class="project-tags">
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">D3.js</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🛠️</div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View Demo">↗</a>
+                <a href="#" class="project-link" aria-label="View GitHub">⌥</a>
+              </div>
+            </div>
+            <h3 class="project-title">Developer CLI Tools</h3>
+            <p class="project-desc">A collection of command-line tools to boost developer productivity. Ship faster, break less.</p>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">CLI</span>
+              <span class="project-tag">TypeScript</span>
+            </div>
+          </article>
         </div>
-        <div class="message-content response-block">
-          <div class="thinking-state" id="contact-thinking">
-            <span class="thinking-dots inline"><span></span><span></span><span></span></span>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-label">04 — Contact</div>
+        <h2 class="section-title">Let's connect</h2>
+        
+        <div class="contact-content">
+          <div class="contact-info fade-in">
+            <p class="contact-text">
+              Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open. Let's build something great together.
+            </p>
+            
+            <div class="contact-links">
+              <a href="mailto:devdotninja@gmail.com" class="contact-link">
+                <span class="icon">✉️</span>
+                <div class="info">
+                  <span class="label">Email</span>
+                  <span class="value">devdotninja@gmail.com</span>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+              <a href="https://github.com/devdotninja-prog" target="_blank" rel="noopener" class="contact-link">
+                <span class="icon">⌥</span>
+                <div class="info">
+                  <span class="label">GitHub</span>
+                  <span class="value">@devdotninja-prog</span>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+              <a href="https://www.linkedin.com/in/achmad-gozali-32b840130" target="_blank" rel="noopener" class="contact-link">
+                <span class="icon">in</span>
+                <div class="info">
+                  <span class="label">LinkedIn</span>
+                  <span class="value">Achmad Gozali</span>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </div>
           </div>
-          <div class="response-content stream-in" id="contact-content">
-            <h3 class="section-title">Let's Connect</h3>
-            <p class="contact-text">Loading...</p>
-            <div class="contact-links" id="contact-links"></div>
+          
+          <div class="availability-card fade-in">
+            <div class="availability-status">
+              <span class="status-dot"></span>
+              <span class="text">Available for projects</span>
+            </div>
+            <p class="availability-text">
+              Currently open to freelance opportunities and interesting collaborations. If you have something exciting in mind, let's talk.
+            </p>
+            <div class="availability-cta">
+              <a href="mailto:devdotninja@gmail.com" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Start a Conversation
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </main>
-  </div>
+    </section>
+  </main>
 
-  <!-- Footer / Status -->
-  <footer class="llm-footer">
-    <span class="footer-status">Ready</span>
-    <span id="footer-name">Portfolio</span>
-    <span id="year"></span>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-text">
+          Designed & built by <a href="#">Achmad Gozali</a>. 2026.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/devdotninja-prog" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/achmad-gozali-32b840130" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/devdotninja" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+    </div>
   </footer>
-
-  <!-- Nav (minimal) -->
-  <nav class="llm-nav">
-    <a href="index.html">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Work</a>
-    <a href="articles.html">Articles</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
   <script src="js/script.js"></script>
 </body>
