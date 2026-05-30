@@ -12,10 +12,23 @@ __pycache__/
 # Node (if you add npm later)
 node_modules/
 
-# Environment
+# Credentials, Secrets & Keys
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.pub
+*.cert
+*.crt
+*.pfx
+*.p12
+*.der
+*credentials*.json
+*secret*.json
+*.passwd
+.htpasswd
+.git-credentials
 
 # OS
 .DS_Store

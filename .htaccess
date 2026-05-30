@@ -1,0 +1,26 @@
+# ==============================================================================
+# Security Headers & Configuration for Hostinger Shared Web Hosting
+# ==============================================================================
+
+# Disable Server Signatures (Information Disclosure prevention)
+ServerSignature Off
+
+<IfModule mod_headers.c>
+    # 1. Content Security Policy (CSP)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+
+    # 2. Strict-Transport-Security (HSTS) - 2 Years duration including subdomains and preload
+    Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # 3. X-Frame-Options - Clickjacking defense
+    Header set X-Frame-Options "DENY"
+
+    # 4. X-Content-Type-Options - MIME sniffing defense
+    Header set X-Content-Type-Options "nosniff"
+
+    # 5. Referrer-Policy - Privacy for outbound link referrers
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # 6. Permissions-Policy - Disable camera, geolocation, microphone hardware APIs
+    Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), magnetometer=(), gyroscope=(), speaker=(), payment=()"
+</IfModule>

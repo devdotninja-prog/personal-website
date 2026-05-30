@@ -1,5 +1,8 @@
 FROM nginx:alpine
 
+# Copy custom secure Nginx configuration
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 # Copy all static assets into the default Nginx public directory
 COPY . /usr/share/nginx/html
 
