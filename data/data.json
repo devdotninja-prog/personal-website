@@ -40,6 +40,14 @@
   ],
   "projects": [
     {
+      "title": "StreamPick",
+      "description": "A modern streaming search engine and directory for movies and TV series in Indonesia. Real-time availability on Netflix, Prime Video, Disney+, and Max.",
+      "technologies": ["Next.js", "React", "TMDB API"],
+      "demo": "https://streampick.achgz.dev/",
+      "github": "",
+      "emoji": "🎬"
+    },
+    {
       "title": "AI Orchestration Platform",
       "description": "A platform for orchestrating multiple AI agents and workflows. Built with Python and modern async patterns.",
       "technologies": ["Python", "AI", "Flask"],

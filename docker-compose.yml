@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: personal-website
+    ports:
+      - "8080:80"
+    volumes:
+      # Bind mount the current directory to enable live development / hot-reloads
+      - .:/usr/share/nginx/html
+    restart: unless-stopped
