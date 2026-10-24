@@ -65,6 +65,7 @@
   var run = 0;
   var soundOn = false;
   var audioCtx = null;
+  var cornersIn = false;
 
   function tap(ch) {
     if (!soundOn || !audioCtx || audioCtx.state !== "running") {
@@ -116,6 +117,15 @@
         if (caret.parentNode) {
           caret.parentNode.removeChild(caret);
         }
+        if (!cornersIn) {
+          cornersIn = true;
+          if (soundBtn) {
+            soundBtn.classList.add("is-in", "is-nudge");
+          }
+          if (hint) {
+            hint.classList.add("is-in");
+          }
+        }
         return;
       }
       chars[i].classList.add("is-on");
@@ -132,6 +142,11 @@
     soundBtn.addEventListener("click", function () {
       soundOn = !soundOn;
       soundBtn.setAttribute("aria-pressed", soundOn ? "true" : "false");
+      soundBtn.setAttribute("aria-label", soundOn ? "sound on" : "sound off");
+      var label = soundBtn.querySelector(".ctrl-label");
+      if (label) {
+        label.textContent = soundOn ? "sound on" : "sound off";
+      }
       if (!soundOn) {
         return;
       }
