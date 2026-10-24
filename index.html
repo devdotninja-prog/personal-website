@@ -11,10 +11,29 @@
   <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-type');
+    }
+  </script>
 </head>
 <body>
+  <!-- hi. you looked. → github.com/devdotninja-prog -->
   <main>
-    <h1>you don't know me, but <em>i built something</em></h1>
+    <h1 aria-label="you don't know me, but i built something">you don't know me, but <em>i built <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">something</a></em></h1>
+    <p id="more" class="more" hidden>
+      <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub</a>
+      · xteink tools · more soon
+    </p>
   </main>
+  <button type="button" class="hint" aria-expanded="false" aria-controls="more" aria-label="more">?</button>
+  <script src="js/site.js"></script>
+  <script>
+    setTimeout(function () {
+      if (!document.querySelector("h1.is-ready")) {
+        document.documentElement.classList.remove("js-type");
+      }
+    }, 2000);
+  </script>
 </body>
 </html>
