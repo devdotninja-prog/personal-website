@@ -36,17 +36,17 @@
 <body>
   <!-- hi. you looked. → github.com/devdotninja-prog -->
   <main>
-    <h1 aria-label="you don't know me, but i built something">you don't know me, but <em>i built <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">something</a></em></h1>
+    <h1 aria-label="you don't know me, but i built something">you don't know me, but <em>i built <button type="button" class="word" id="something" aria-expanded="false" aria-controls="things">something</button></em></h1>
     <div class="below">
-      <p id="listing" class="listing" hidden role="status">
-        <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub/</a>
-        <span>xteink-tools/</span>
-        <span>more-soon/</span>
-      </p>
-      <p id="more" class="more" hidden>
-        <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub</a>
-        · xteink tools · more soon
-      </p>
+      <noscript>
+        <ul class="things">
+          <li><a class="word" href="https://epub.achgz.dev">link-to-epub</a> <span class="note">turn any article into an epub</span></li>
+          <li><a class="word" href="https://merpad.achgz.dev">merpad</a> <span class="note">a mermaid diagram editor</span></li>
+          <li>xteink tools <span class="note">soon</span></li>
+        </ul>
+      </noscript>
+      <ul id="things" class="things" hidden></ul>
+      <p id="listing" class="listing" hidden role="status"></p>
       <p id="stay" class="stay" hidden>
         still here? fine. <a class="word" href="https://github.com/devdotninja-prog">github.com/devdotninja-prog</a>
       </p>
@@ -62,10 +62,6 @@
       <path d="M15.6 8.6c1.6 1.5 1.6 5.3 0 6.8M18.4 6.6c2.8 2.6 2.8 8.2 0 10.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
     </svg>
     <span class="ctrl-label" aria-hidden="true">sound off</span>
-  </button>
-  <button type="button" class="hint" aria-expanded="false" aria-controls="more" aria-label="more">
-    <span class="icon-mark" aria-hidden="true">?</span>
-    <span class="ctrl-label" aria-hidden="true">more</span>
   </button>
   <script src="js/site.js"></script>
   <script>

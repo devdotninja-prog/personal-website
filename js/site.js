@@ -23,44 +23,141 @@
     return Number(hour);
   }
 
-  var line = document.querySelector("h1");
-  if (line && jakartaHour() < 5) {
-    line.setAttribute("aria-label", "you don't know me, but i'm still building something");
-    line.innerHTML =
-      "you don't know me, but <em>i'm still building <a class=\"word\" href=\"https://epub.achgz.dev\" title=\"epub.achgz.dev\">something</a></em>";
+  var things = [
+    {
+      slug: "link-to-epub",
+      name: "link-to-epub",
+      href: "https://epub.achgz.dev",
+      note: "turn any article into an epub"
+    },
+    {
+      slug: "merpad",
+      name: "merpad",
+      href: "https://merpad.achgz.dev",
+      note: "a mermaid diagram editor"
+    },
+    {
+      slug: "xteink-tools",
+      name: "xteink tools",
+      note: "soon"
+    },
+    {
+      slug: "more-soon",
+      name: "more soon",
+      lsOnly: true
+    }
+  ];
+
+  function hostTitle(href) {
+    try {
+      return new URL(href).host;
+    } catch (err) {
+      return href;
+    }
   }
 
-  var hint = document.querySelector(".hint");
-  var more = document.getElementById("more");
-  if (hint && more) {
-    hint.addEventListener("click", function () {
-      var open = more.hasAttribute("hidden");
-      if (open) {
-        more.removeAttribute("hidden");
-        more.classList.add("is-open");
-        hint.setAttribute("aria-expanded", "true");
+  function wordLink(href, text) {
+    var a = document.createElement("a");
+    a.className = "word";
+    a.href = href;
+    a.title = hostTitle(href);
+    a.textContent = text;
+    return a;
+  }
+
+  function fillList(el) {
+    if (!el) {
+      return;
+    }
+    el.textContent = "";
+    things.forEach(function (item) {
+      if (item.lsOnly) {
+        return;
+      }
+      var li = document.createElement("li");
+      if (item.href) {
+        li.appendChild(wordLink(item.href, item.name));
       } else {
-        more.setAttribute("hidden", "");
-        more.classList.remove("is-open");
-        hint.setAttribute("aria-expanded", "false");
+        var name = document.createElement("span");
+        name.textContent = item.name;
+        li.appendChild(name);
+      }
+      if (item.note) {
+        var note = document.createElement("span");
+        note.className = "note";
+        note.textContent = item.note;
+        li.appendChild(document.createTextNode(" "));
+        li.appendChild(note);
+      }
+      el.appendChild(li);
+    });
+  }
+
+  function fillListing(el) {
+    if (!el) {
+      return;
+    }
+    el.textContent = "";
+    things.forEach(function (item) {
+      var text = item.slug + "/";
+      if (item.href) {
+        el.appendChild(wordLink(item.href, text));
+      } else {
+        var span = document.createElement("span");
+        span.textContent = text;
+        el.appendChild(span);
       }
     });
   }
 
-  var listing = document.getElementById("listing");
-  var typed = "";
-
-  function setListing(open) {
-    if (!listing) {
+  function setPanel(el, open) {
+    if (!el) {
       return;
     }
     if (open) {
-      listing.removeAttribute("hidden");
-      listing.classList.add("is-open");
+      el.removeAttribute("hidden");
+      el.classList.add("is-open");
     } else {
-      listing.setAttribute("hidden", "");
-      listing.classList.remove("is-open");
+      el.setAttribute("hidden", "");
+      el.classList.remove("is-open");
     }
+  }
+
+  var line = document.querySelector("h1");
+  var something = document.getElementById("something");
+  var built = document.getElementById("things");
+  var listing = document.getElementById("listing");
+
+  fillList(built);
+  fillListing(listing);
+
+  if (line && something && jakartaHour() < 5) {
+    line.setAttribute("aria-label", "you don't know me, but i'm still building something");
+    var em = line.querySelector("em");
+    if (em) {
+      em.textContent = "";
+      em.appendChild(document.createTextNode("i'm still building "));
+      em.appendChild(something);
+    }
+  }
+
+  function setThingsOpen(open) {
+    setPanel(built, open);
+    if (something) {
+      something.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+  }
+
+  if (something && built) {
+    something.addEventListener("click", function () {
+      setThingsOpen(built.hasAttribute("hidden"));
+    });
+  }
+
+  var typed = "";
+
+  function setListing(open) {
+    setPanel(listing, open);
   }
 
   function isField(el) {
@@ -80,6 +177,7 @@
     }
     if (e.key === "Escape") {
       setListing(false);
+      setThingsOpen(false);
       typed = "";
       return;
     }
@@ -207,9 +305,6 @@
           cornersIn = true;
           if (soundBtn) {
             soundBtn.classList.add("is-in", "is-nudge");
-          }
-          if (hint) {
-            hint.classList.add("is-in");
           }
         }
         return;
