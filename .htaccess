@@ -5,6 +5,8 @@
 # Disable Server Signatures (Information Disclosure prevention)
 ServerSignature Off
 
+ErrorDocument 404 /404.html
+
 <IfModule mod_headers.c>
     # 1. Content Security Policy (CSP)
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
