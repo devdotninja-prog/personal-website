@@ -148,9 +148,9 @@ html.js-type h1.is-ready .ch.is-on {
   animation: fade-in 0.45s ease;
 }
 
-.hint {
+.hint,
+.sound {
   position: fixed;
-  right: 1.05rem;
   bottom: 0.95rem;
   padding: 0.4rem;
   border: 0;
@@ -162,16 +162,32 @@ html.js-type h1.is-ready .ch.is-on {
   cursor: pointer;
 }
 
+.hint {
+  right: 1.05rem;
+}
+
+.sound {
+  left: 1.05rem;
+}
+
+.sound[aria-pressed="true"] {
+  color: color-mix(in srgb, var(--fg) 68%, var(--bg));
+}
+
 .hint:hover,
-.hint:focus-visible {
+.hint:focus-visible,
+.sound:hover,
+.sound:focus-visible {
   color: color-mix(in srgb, var(--fg) 72%, var(--bg));
 }
 
-.hint:focus {
+.hint:focus,
+.sound:focus {
   outline: none;
 }
 
-.hint:focus-visible {
+.hint:focus-visible,
+.sound:focus-visible {
   outline: 1px solid color-mix(in srgb, var(--fg) 35%, transparent);
   outline-offset: 3px;
 }
@@ -199,7 +215,8 @@ html.js-type h1.is-ready .ch.is-on {
     animation: none;
   }
 
-  .caret {
+  .caret,
+  .sound {
     display: none;
   }
 }
