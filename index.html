@@ -8,6 +8,21 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Achmad Gozali">
+  <meta property="og:description" content="you don't know me, but i built something">
+  <meta property="og:image" content="og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Achmad Gozali">
+  <meta name="twitter:description" content="you don't know me, but i built something">
+  <meta name="twitter:image" content="og.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
   <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
@@ -21,10 +36,20 @@
   <!-- hi. you looked. → github.com/devdotninja-prog -->
   <main>
     <h1 aria-label="you don't know me, but i built something">you don't know me, but <em>i built <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">something</a></em></h1>
-    <p id="more" class="more" hidden>
-      <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub</a>
-      · xteink tools · more soon
-    </p>
+    <div class="below">
+      <p id="listing" class="listing" hidden role="status">
+        <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub/</a>
+        <span>xteink-tools/</span>
+        <span>more-soon/</span>
+      </p>
+      <p id="more" class="more" hidden>
+        <a class="word" href="https://epub.achgz.dev" title="epub.achgz.dev">link-to-epub</a>
+        · xteink tools · more soon
+      </p>
+      <p id="stay" class="stay" hidden>
+        still here? fine. <a class="word" href="https://github.com/devdotninja-prog">github.com/devdotninja-prog</a>
+      </p>
+    </div>
   </main>
   <button type="button" class="sound" aria-pressed="false" aria-label="sound off">
     <svg class="icon icon-off" viewBox="0 0 24 24" aria-hidden="true">

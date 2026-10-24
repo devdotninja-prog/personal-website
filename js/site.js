@@ -1,8 +1,34 @@
 (function () {
   var smirk =
-    "%c¬‿¬\n%coh. you opened the console. of course you did.\n%cgithub.com/devdotninja-prog";
+    "%c¬‿¬\n%coh. you opened the console. of course you did.\n%ctype ls.\n%cgithub.com/devdotninja-prog";
   var smirkStyle = "color:#8a8276;font-family:ui-serif,Georgia,serif;line-height:1.55;";
-  console.log(smirk, smirkStyle + "font-size:18px;", smirkStyle + "font-size:12px;", smirkStyle + "font-size:12px;");
+  console.log(
+    smirk,
+    smirkStyle + "font-size:18px;",
+    smirkStyle + "font-size:12px;",
+    smirkStyle + "font-size:12px;",
+    smirkStyle + "font-size:12px;"
+  );
+
+  function nowMs() {
+    return window.__now == null ? Date.now() : window.__now;
+  }
+
+  function jakartaHour() {
+    var hour = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Jakarta",
+      hour: "2-digit",
+      hourCycle: "h23"
+    }).format(new Date(nowMs()));
+    return Number(hour);
+  }
+
+  var line = document.querySelector("h1");
+  if (line && jakartaHour() < 5) {
+    line.setAttribute("aria-label", "you don't know me, but i'm still building something");
+    line.innerHTML =
+      "you don't know me, but <em>i'm still building <a class=\"word\" href=\"https://epub.achgz.dev\" title=\"epub.achgz.dev\">something</a></em>";
+  }
 
   var hint = document.querySelector(".hint");
   var more = document.getElementById("more");
@@ -21,11 +47,71 @@
     });
   }
 
+  var listing = document.getElementById("listing");
+  var typed = "";
+
+  function setListing(open) {
+    if (!listing) {
+      return;
+    }
+    if (open) {
+      listing.removeAttribute("hidden");
+      listing.classList.add("is-open");
+    } else {
+      listing.setAttribute("hidden", "");
+      listing.classList.remove("is-open");
+    }
+  }
+
+  function isField(el) {
+    if (!el) {
+      return false;
+    }
+    if (el.isContentEditable) {
+      return true;
+    }
+    var tag = el.tagName;
+    return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT";
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (isField(e.target)) {
+      return;
+    }
+    if (e.key === "Escape") {
+      setListing(false);
+      typed = "";
+      return;
+    }
+    if (e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1) {
+      return;
+    }
+    typed = (typed + e.key).slice(-2);
+    if (typed === "ls") {
+      setListing(listing && listing.hasAttribute("hidden"));
+      typed = "";
+    }
+  });
+
+  var stay = document.getElementById("stay");
+  var stayShown = false;
+  var stayDelay = window.__stayDelay == null ? 30000 : window.__stayDelay;
+
+  function showStay() {
+    if (stayShown || !stay) {
+      return;
+    }
+    stayShown = true;
+    stay.removeAttribute("hidden");
+    stay.classList.add("is-in");
+  }
+
+  window.setTimeout(showStay, stayDelay);
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     return;
   }
 
-  var line = document.querySelector("h1");
   var soundBtn = document.querySelector(".sound");
   if (!line) {
     return;
